@@ -12,6 +12,7 @@ The homework pdf has the basic instructions, and you should definitely read the 
  - [ ] Make sure you remember to upload a pdf again on this assignment, as Problem 1 has written work.
  - [ ] Read through the docstrings before getting started! They have important information!
  - [ ] Add code to the template functions in `Prob2.py` to find and output prime factors.
+ 	- [ ] Any time a guessed word is passed to a function in `Prob2.py`, you should account for the possibility that it might have mixed upper and lower case and correct it accordingly.
 
 __Remember to fill out the commented metadata at the top of each Python script!__
 
