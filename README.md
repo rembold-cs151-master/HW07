@@ -1,10 +1,11 @@
 # Homework 7
+![](https://github.com/<user_info>/workflows/Autotesting/badge.svg)
 
 Assignment Status: PENDING
 
 _Please change the above to DONE when you finish and want the assignment to be graded!_
 
-Due the night of Oct 17 at midnight
+Due the night of March 13 at midnight!
 
 
 ## Instructions
@@ -18,5 +19,5 @@ __Remember to fill out the commented metadata at the top of each Python script!_
 
 #### Testing
  - Prob 2
- 	- Automated tests will check return values of all template functions
+ 	- Automated tests will check return values of all template functions, as well as playing some rounds of the game to see if proper overall scores are reported.
 	- With the exception of the function `display_hand`, automated tests will not check what is printed to screen. I will test that myself (and you should test it yourself as well!) Feel free to add whatever formatting or spacing you need to make the output to the screen look nice and readable.
