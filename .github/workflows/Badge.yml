@@ -1,0 +1,31 @@
+name: Update Badge
+
+on:
+  push
+    #paths:
+      #- 'README.md'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Update User Info and Commit if needed
+      run: |
+        if grep -q "<user_info>" README.md && ! grep -q "master" <<< ${{ github.repository }} ;
+        then
+          echo "Updating Badge Info";
+          sed -i '2s|<user_info>|'${{ github.repository }}'|g' README.md;
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Update Badge Info" -a
+        else
+          echo "No update necessary";
+        fi
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+

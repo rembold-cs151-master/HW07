@@ -17,7 +17,7 @@ def numcheck(num, ans, tol=0.02):
 
 class Test_Prob1:
     def test_pdf_present(self):
-        assert os.path.isfile('HW7.pdf') == True
+        assert any(f.endswith('.pdf') for f in os.listdir('.'))
 
 
 class Test_Prob2:

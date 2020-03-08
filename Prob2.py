@@ -7,7 +7,7 @@
 import math
 import random
 
-# Global variables that all functions should have
+# Variables that all functions should have
 # access to (but which they will not alter)
 VOWELS = 'aeiou'
 CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
@@ -27,6 +27,8 @@ def load_words():
     """
     Returns a list of valid words, where all words are
     strings of lowercase characters.
+
+    YOU DO NOT NEED TO TOUCH THIS FUNCTION!
 
     Outputs:
         - (list of strings): list of lowercase valid words
@@ -99,6 +101,8 @@ def deal_hand(n):
     letters. Approximately 1/3 of the letters in the hand
     are guaranteed to be vowels, and the rest consonants.
 
+    YOU DO NOT NEED TO TOUCH THIS FUNCTION!
+
     Input:
         - n (int): Size of desired hand (number of letters)
     Output:
@@ -118,7 +122,7 @@ def deal_hand(n):
 
 def update_hand(hand, word):
     """
-    Function to return a new hand, without any letters that
+    Function to return a new hand, lacking any letters that
     were used up by the latest guessed word.
 
     Should NOT assume that the hand contains every letter in
@@ -154,7 +158,8 @@ def is_valid_word(word, hand, word_list):
     Function to check if a word is both present in the valid
     word list AND if all letters necessary for the word are
     present in the hand. Should return True if both conditions
-    are satisfied, False otherwise.
+    are satisfied, False otherwise. Makes no assumptions about
+    any capitalization in the submitted word.
 
     Inputs:
         - word (string): the guessed word
@@ -165,11 +170,11 @@ def is_valid_word(word, hand, word_list):
                 hand, otherwise False
 
     Usage:
-        >>> is_valid_word('axe', ['a', 'x', 'e', 't'], word_list)
+        >>> is_valid_word('Axe', ['a', 'x', 'e', 't'], word_list)
         True
         >>> is_valid_word('axes', ['a', 'x', 'e', 't'], word_list)
         False
-        >>> is_valid_word('xet', ['a', 'x', 'e', 't'], word_list)
+        >>> is_valid_word('xeT', ['a', 'x', 'e', 't'], word_list)
         False
         >>> is_valid_word('teat', ['a', 'x', 'e', 't'], word_list)
         False
@@ -184,7 +189,7 @@ def play_hand(hand, word_list):
     Allows a user to play a given hand, as follows:
         * The hand is displayed
         * The user can input a word
-        * When any word is entered (valid or invalid), the letters
+        * When any word is entered (valid OR invalid), the letters
           are used up from the hand
         * An invalid word results in no points, and a message is
           displayed to the user explaining and asking for another
@@ -195,6 +200,8 @@ def play_hand(hand, word_list):
         * The sum of all the word scores is displayed when the hand finishes
         * The hand finishes when there are either no more letters to guess or
           when the user inputs the string '!!' indicating they are giving up.
+          Do NOT stop the hand when only a single character is left, only when
+          0 letters are left or '!!' is entered.
 
     Inputs:
         - hand (list of str): current hand of characters
